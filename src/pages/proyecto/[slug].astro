@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectDetail from "../../components/ProjectDetail";
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "seat-cupra-park-pay" } },
+    { params: { slug: "zemra-zero-emissions" } },
+    { params: { slug: "patronat-festes-roquetes" } },
+    { params: { slug: "pdsp" } },
+    { params: { slug: "harvest-hub" } },
+    { params: { slug: "fraudify" } },
+    { params: { slug: "p2m" } },
+  ];
+}
+
+const { slug } = Astro.params;
+---
+
+<Layout title="Detalle del Proyecto">
+  <ProjectDetail slug={slug} client:load />
+</Layout>
